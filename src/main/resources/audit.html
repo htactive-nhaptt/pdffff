@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="auditStyle.css">
+    </head>
+    <body>
+    <div class='header' th:include="auditHeader::auditHeader"></div>
+    <div class='footer' th:include="auditFooter::auditFooter"></div>
+    <div th:each="productGroup: ${productGroups}">
+            <p class="product-group">[[${productGroup.getPgNumber()}]] - [[${productGroup.getPgName()}]]</p>
+            <table>
+                <thead>
+                <tr>
+                    <th>BRANCH</th>
+                    <th>MODEL</th>
+                    <th>FEATURE TEXT</th>
+                    <th>M.P.</th>
+                    <th>ARTICLE</th>
+                    <th>PRO</th>
+                    <th>SAL</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="audit: ${productGroup.getAudits()}">
+                    <td width="10%" th:text="${audit.getBranch()}"></td>
+                    <td width="10%" th:text="${audit.getModel()}"></td>
+                    <td width="40%" th:text="${audit.getFeatureText()}"></td>
+                    <td width="10%" th:text="${audit.getMultiPack()}"></td>
+                    <td width="10%" th:text="${audit.getArticleNumber()}"></td>
+                    <td width="10%" th:text="${audit.getPro()}"></td>
+                    <td width="10%" th:text="${audit.getSal()}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+    <div class='footer' th:include="auditFooter::auditFooter"></div>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+table {
+    font-size: 11px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+    font-family: Arial, serif;
+    -fs-table-paginate: paginate;
+    border-spacing: 0;
+}
+
+thead {
+    text-align: center;
+    font-weight: bold;
+}
+
+tr:nth-child(even){background-color: #c9c9c9;}
+
+th, td {
+    border: 0.5px solid black;
+}
+
+
+table tr {
+    page-break-inside: avoid;
+}
+
+.product-group {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.auditHeader td{
+    border: none;
+}
+
+.auditHeader {
+    border: none;
+}
+
+.logo {
+  width: 50px;
+}
+
+
+.print-date {
+    text-align: right;
+    font-weight: bold;
+    margin-top: -1.5px;
+}
+.period {
+    font-weight: bold;
+}
+
+.right {
+    text-align: right;
+}
+
+.text {
+    font-size: 9px;
+    margin-top: -13px;
+}
+
+@page {
+
+    @bottom-left {
+        content: element(footer);
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+    @top-right {
+        content: element(header);
+        vertical-align: bottom;
+        padding-bottom: 10px;
+    }
+
+    margin-top: 3.3cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+    margin-bottom: 3.3cm;
+
+    size: A4 portrait;
+}
+
+div.header {
+    position: running(header);
+}
+
+div.footer {
+    display: block;
+    margin-top: 0.5cm;
+    position: running(footer);
+}
+
+#pagenumber:before {
+    content: counter(page);
+}
+
+#pagecount:before {
+    content: counter(pages);
+}
+
+.footer {
+    text-align: center;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.info {
+    width: 100px;
+    font-size: 9px;
+    text-align: left;
+    margin-left: 400px;
+}
+
+.table-footer {
+    border: none;
+}
+.footer-left {
+    text-align: left;
+}
+
+.note {
+    margin-top: -13px;
+}
+
+.footer-info {
+    margin-right: 60px;
+    width: 230px;
+    margin-bottom: 60px;
+}
