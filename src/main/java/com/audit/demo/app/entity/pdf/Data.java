@@ -1,4 +1,4 @@
-package com.audit.demo.app.entity;
+package com.audit.demo.app.entity.pdf;
 
 public class Data {
     private String firstname;

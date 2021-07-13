@@ -1,10 +1,8 @@
 package com.audit.demo.app;
 
 import com.audit.demo.app.dao.AuditDao;
-import com.audit.demo.app.dao.UserDao;
-import com.audit.demo.app.entity.Audit;
-import com.audit.demo.app.entity.Data;
-import com.audit.demo.app.entity.ProductGroup;
+import com.audit.demo.app.entity.pdf.Audit;
+import com.audit.demo.app.entity.pdf.ProductGroup;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
@@ -20,9 +18,9 @@ import static com.itextpdf.text.pdf.BaseFont.IDENTITY_H;
 import static org.thymeleaf.templatemode.TemplateMode.HTML;
 
 
-public class FlyingSaucerTest {
+public class PDFGenerateFile {
 
-    private static final String OUTPUT_FILE = "test.pdf";
+    private static final String OUTPUT_FILE = "audit.pdf";
     private static final String UTF_8 = "UTF-8";
 
     public void generatePdf() throws Exception {
@@ -37,12 +35,10 @@ public class FlyingSaucerTest {
         templateEngine.setTemplateResolver(templateResolver);
 
 
-        Data data = new UserDao().exampleDataForJohnDoe();
         List<Audit> audits = new AuditDao().getData();
         List<ProductGroup> productGroups = new AuditDao().getDataBody();
 
         Context context = new Context();
-        context.setVariable("data", data);
         context.setVariable("audits", audits);
         context.setVariable("productGroups", productGroups);
 
@@ -64,7 +60,6 @@ public class FlyingSaucerTest {
         renderer.createPDF(outputStream);
         outputStream.close();
     }
-
 
 
     private String convertToXhtml(String html) throws UnsupportedEncodingException {

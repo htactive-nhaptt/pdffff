@@ -1,4 +1,4 @@
-package com.audit.demo.app.entity;
+package com.audit.demo.app.entity.pdf;
 import java.util.List;
 public class ProductGroup {
     private int pgNumber;

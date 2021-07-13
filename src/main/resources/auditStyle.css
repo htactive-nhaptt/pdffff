@@ -117,6 +117,10 @@ div.footer {
 .table-footer {
     border: none;
 }
+
+.table-footer td {
+    border: none;
+}
 .footer-left {
     text-align: left;
 }

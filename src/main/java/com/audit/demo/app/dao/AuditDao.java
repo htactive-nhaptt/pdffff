@@ -1,7 +1,7 @@
 package com.audit.demo.app.dao;
 
-import com.audit.demo.app.entity.Audit;
-import com.audit.demo.app.entity.ProductGroup;
+import com.audit.demo.app.entity.pdf.Audit;
+import com.audit.demo.app.entity.pdf.ProductGroup;
 
 import java.util.List;
 
